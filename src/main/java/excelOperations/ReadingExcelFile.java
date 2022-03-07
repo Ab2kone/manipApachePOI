@@ -13,7 +13,7 @@ public class ReadingExcelFile {
 
     public static void main(String[] args) throws IOException {
 
-        String excelFilePath = ".\\datafiles\\sampledatasafety.xlsx";
+        String excelFilePath = "./datafiles/sampledatasafety.xlsx";
         FileInputStream inputStream = new FileInputStream(excelFilePath);
         XSSFWorkbook workbook = new XSSFWorkbook(excelFilePath);
 
