@@ -1,6 +1,7 @@
 package excelOperations;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
+import org.apache.poi.sl.usermodel.Sheet;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -32,8 +33,7 @@ public class WritingExcelDemo {
 
         System.out.println(rows);
         System.out.println(cols);
-
-
+        /*
         for (int r=0; r < rows; r++){
 
             XSSFRow row = sheet.createRow(r);
@@ -53,6 +53,31 @@ public class WritingExcelDemo {
                 if (value instanceof Boolean){
                     cell.setCellValue((Boolean) value);
                 }
+            }
+        }
+
+         */
+
+        int rowCount = 0;
+
+        for (Object emp[]: emptydata){
+            XSSFRow row = sheet.createRow(rowCount++);
+            int columnCount = 0;
+            for (Object value: emp){
+                XSSFCell cell = row.createCell(columnCount++);
+
+                if (value instanceof String){
+                    cell.setCellValue((String) value);
+                }
+
+                if (value instanceof Integer){
+                    cell.setCellValue((Integer) value);
+                }
+
+                if (value instanceof Boolean){
+                    cell.setCellValue((Boolean) value);
+                }
+
             }
         }
 
